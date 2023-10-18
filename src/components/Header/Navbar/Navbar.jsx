@@ -5,7 +5,7 @@ import { GiOpenedFoodCan } from "react-icons/gi";
 const Navbar = () => {
     const links = (
       <>
-        <li id="sidebar" className="space-x-7">
+        <li id="sidebar" className="mx-3">
           <NavLink
             to="/"
             className={({ isActive, isPending }) =>
@@ -16,7 +16,7 @@ const Navbar = () => {
           </NavLink>
         </li>
 
-        <li id="sidebar">
+        <li id="sidebar" className="mx-3">
           <NavLink
             to="/addProduct"
             className={({ isActive, isPending }) =>
@@ -26,7 +26,7 @@ const Navbar = () => {
             Add Product
           </NavLink>
         </li>
-        <li id="sidebar">
+        <li id="sidebar" className="mx-3">
           <NavLink
             to="/myCart"
             className={({ isActive, isPending }) =>

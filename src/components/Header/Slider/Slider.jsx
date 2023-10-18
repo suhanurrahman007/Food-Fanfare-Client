@@ -11,7 +11,7 @@ const Slider = () => {
             Rustle up an easy veggie traybake for a quick midweek dinner,
             perfect for feeding the family with minimal washing up.
           </p>
-          <button className="btn rounded-none bg-[#c5a35e] text-white hover:bg-white hover:text-black text-xs">Choose Menu</button>
+          <button className="btn rounded-none border-none bg-[#c5a35e] text-white hover:bg-white hover:text-black text-xs">Choose Menu</button>
         </div>
 
         <div className="flex md:justify-center lg:justify-start">
