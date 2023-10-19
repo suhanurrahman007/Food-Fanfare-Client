@@ -9,6 +9,7 @@ import BrandProducts from "../components/Brand/BrandProducts";
 import BrandProductDetails from "../components/Brand/BrandProductDetails";
 import Login from "../Pages/Login/Login";
 import Registration from "../Pages/Registration/Registration";
+import PrivetRouter from "./PrivetRouter";
 
 const router = createBrowserRouter([
   {
@@ -22,40 +23,59 @@ const router = createBrowserRouter([
       },
       {
         path: "/addProduct",
-        element: <AddCart></AddCart>,
+        element: (
+          <PrivetRouter>
+            <AddCart></AddCart>
+          </PrivetRouter>
+        ),
       },
       {
         path: "/myCart",
-        element: <MyCart></MyCart>,
+        element: (
+          <PrivetRouter>
+            <MyCart></MyCart>
+          </PrivetRouter>
+        ),
         loader: () => fetch("http://localhost:5000/product"),
       },
       {
         path: "/updateProduct/:id",
-        element: <UpdateProduct></UpdateProduct>,
+        element: (
+          <PrivetRouter>
+            <UpdateProduct></UpdateProduct>
+          </PrivetRouter>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/product/${params.id}`),
       },
       {
         path: "/brand/:brandName",
-        element: <BrandProducts></BrandProducts>,
+        element: (
+          <PrivetRouter>
+            <BrandProducts></BrandProducts>
+          </PrivetRouter>
+        ),
         loader: () => fetch("http://localhost:5000/product"),
       },
 
       {
         path: "/details/:id",
-        element: <BrandProductDetails></BrandProductDetails>,
+        element: (
+          <PrivetRouter>
+            <BrandProductDetails></BrandProductDetails>
+          </PrivetRouter>
+        ),
         loader: () => fetch("http://localhost:5000/product"),
       },
 
       {
         path: "/login",
-        element: <Login></Login>
+        element: <Login></Login>,
       },
       {
         path: "/registration",
-        element: <Registration></Registration>
-      }
-
+        element: <Registration></Registration>,
+      },
     ],
   },
 ]);

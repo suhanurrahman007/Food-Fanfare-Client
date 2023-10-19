@@ -6,6 +6,7 @@ import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 const Navbar = () => {
   const { user, logoutUsers } = useContext(AuthContext);
+  console.log(user);
 
   const handleLogout = () => {
     logoutUsers()
@@ -82,9 +83,9 @@ const Navbar = () => {
             </div>
             <Link
               to={"/"}
-              className="btn btn-ghost normal-case items-center text-xl"
+              className="btn btn-ghost normal-case items-center text-xs -ml-4 md:ml-0 md:text-xl"
             >
-              <span className="text-5xl">
+              <span className="text-xl md:text-5xl">
                 <GiOpenedFoodCan></GiOpenedFoodCan>
               </span>
               <span className="text-white">Yummy</span>
@@ -95,16 +96,24 @@ const Navbar = () => {
           </div>
           <div className="navbar-end">
             {user ? (
-              <button
-                onClick={handleLogout}
-                className="btn w-28 h-8 bg-blue-900 text-white border-none rounded hover:bg-blue-950 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-              >
-                Log Out
-              </button>
+              <>
+                <span className="mr-2 text-xs">{user?.displayName}</span>
+                <img
+                  src={user?.photoURL}
+                  alt="Profile"
+                  className="w-8 h-8 rounded-full mr-2"
+                />
+                <button
+                  onClick={handleLogout}
+                  className=" text-xs w-16 h-9 p-2 bg-blue-900 text-white border-none rounded hover:bg-blue-950 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                >
+                  Log Out
+                </button>
+              </>
             ) : (
               <Link
                 to={"/login"}
-                className="btn w-28 h-8 bg-blue-900 text-white border-none rounded hover:bg-blue-950 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                className="text-xs w-16 h-9 p-2 flex justify-center items-center bg-blue-900 text-white border-none rounded hover:bg-blue-950 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
                 Log In
               </Link>
