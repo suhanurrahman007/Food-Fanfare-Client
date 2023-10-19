@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home";
 import AddCart from "../Pages/AddCart/AddCart";
 import MyCart from "../Pages/MyCart/MyCart";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import UpdateProduct from "../Pages/MyCart/UpdateProduct";
 
 const router = createBrowserRouter([
   {
@@ -22,9 +23,15 @@ const router = createBrowserRouter([
       {
         path: "/myCart",
         element: <MyCart></MyCart>,
+        loader: () => fetch("http://localhost:5000/product"),
+      },
+      {
+        path: "/updateProduct/:id",
+        element: <UpdateProduct></UpdateProduct>,
+        loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`),
       },
     ],
   },
 ]);
 
-export default router
+export default router;
