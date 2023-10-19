@@ -1,8 +1,22 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css"
 import { GiOpenedFoodCan } from "react-icons/gi";
+import { useContext } from "react";
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 const Navbar = () => {
+  const { user, logoutUsers } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logoutUsers()
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
     const links = (
       <>
         <li id="sidebar" className="mx-3">
@@ -80,7 +94,21 @@ const Navbar = () => {
             <ul className="menu menu-horizontal px-1">{links}</ul>
           </div>
           <div className="navbar-end">
-            <a className="btn">Login</a>
+            {user ? (
+              <button
+                onClick={handleLogout}
+                className="btn w-28 h-8 bg-blue-900 text-white border-none rounded hover:bg-blue-950 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              >
+                Log Out
+              </button>
+            ) : (
+              <Link
+                to={"/login"}
+                className="btn w-28 h-8 bg-blue-900 text-white border-none rounded hover:bg-blue-950 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              >
+                Log In
+              </Link>
+            )}
           </div>
         </div>
       </div>

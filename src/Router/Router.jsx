@@ -7,6 +7,8 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import UpdateProduct from "../Pages/MyCart/UpdateProduct";
 import BrandProducts from "../components/Brand/BrandProducts";
 import BrandProductDetails from "../components/Brand/BrandProductDetails";
+import Login from "../Pages/Login/Login";
+import Registration from "../Pages/Registration/Registration";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +46,16 @@ const router = createBrowserRouter([
         element: <BrandProductDetails></BrandProductDetails>,
         loader: () => fetch("http://localhost:5000/product"),
       },
+
+      {
+        path: "/login",
+        element: <Login></Login>
+      },
+      {
+        path: "/registration",
+        element: <Registration></Registration>
+      }
+
     ],
   },
 ]);

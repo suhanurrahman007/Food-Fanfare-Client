@@ -75,7 +75,7 @@ const BrandProductDetails = () => {
                   as a beacon for all culinary enthusiasts, health aficionados,
                   and every individual who cherishes quality in their food. We
                   believe that every meal is a celebration, and every
-                  ingredient, a testament to the Earth's generosity. <br />
+                  ingredient, a testament to the Earth is generosity. <br />
                   Our mission is to bring the finest produce, the rarest spices,
                   and the most diverse range of grocery items right to your
                   doorstep. We source our products directly from local farmers
@@ -86,7 +86,7 @@ const BrandProductDetails = () => {
                   preserved with love. <br /> Every aisle in our store tells a
                   story - of traditions passed down through generations, of
                   exotic cultures from distant lands, and of the innovative
-                  spirit of contemporary culinary artists. Whether you're
+                  spirit of contemporary culinary artists. Whether you are
                   looking for the comforting flavors of your childhood, or
                   yearning to experiment with something new, Green Earth Grocers
                   promises an unmatched journey for your taste buds.
