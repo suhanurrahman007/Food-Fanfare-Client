@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Swal from "sweetalert2";
 
 const AddCart = () => {
   const [selectedRating, setSelectedRating] = useState(2);
@@ -38,7 +39,14 @@ const AddCart = () => {
     })
     .then(res => res.json())
     .then(data => {
-        console.log(data);
+      console.log(data);
+      if (data.insertedId) {
+        Swal.fire({
+          icon: "success",
+          title: "Wow....!",
+          text: "The Product details have been Added successfully.!",
+        });
+      }
     })
 
 
@@ -62,12 +70,14 @@ const AddCart = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-white">Brand Name</span>
+              <span className="label-text text-white">
+                The Types Of Products
+              </span>
             </label>
             <input
               type="text"
-              name="brandName"
-              placeholder="Brand Name"
+              name="productType"
+              placeholder="Name productType"
               className="input input-bordered"
               required
             />
@@ -75,21 +85,15 @@ const AddCart = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-white">
-                The Types Of Products
-              </span>
+              <span className="label-text text-white">Brand Name</span>
             </label>
-            <select
-              className="input input-bordered"
-              name="productType"
-              required
-            >
-              <option value="">Select a category</option>
-              <option value="electronics">Electronics</option>
-              <option value="apparel">Apparel</option>
-              <option value="beauty">Beauty</option>
-              <option value="home">Home</option>
-              <option value="toys">Toys</option>
+            <select className="input input-bordered" name="brandName" required>
+              <option value="Nestle">Nestle</option>
+              <option value="Kellogg">Kellogg</option>
+              <option value="Unilever">Unilever</option>
+              <option value="PepsiCo">PepsiCo</option>
+              <option value="CocaCola">Coca Cola</option>
+              <option value="KraftHeinz">Kraft Heinz</option>
             </select>
           </div>
 

@@ -14,7 +14,7 @@ const UpdateProduct = () => {
     productImageURL,
     detailedDescription,
   } = product;
-  
+
   const [selectedRating, setSelectedRating] = useState(rating);
 
   const handleUpdateProduct = (e) => {
@@ -86,13 +86,15 @@ const UpdateProduct = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-white">Brand Name</span>
+              <span className="label-text text-white">
+                The Types Of Products
+              </span>
             </label>
             <input
               type="text"
-              defaultValue={brandName}
-              name="brandName"
-              placeholder="Brand Name"
+              defaultValue={productType}
+              name="productType"
+              placeholder="Product Type"
               className="input input-bordered"
               required
             />
@@ -100,22 +102,20 @@ const UpdateProduct = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-white">
-                The Types Of Products
-              </span>
+              <span className="label-text text-white">Brand Name</span>
             </label>
             <select
               className="input input-bordered"
-              defaultValue={productType}
-              name="productType"
+              defaultValue={brandName}
+              name="brandName"
               required
             >
-              <option value="">Select a category</option>
-              <option value="electronics">Electronics</option>
-              <option value="apparel">Apparel</option>
-              <option value="beauty">Beauty</option>
-              <option value="home">Home</option>
-              <option value="toys">Toys</option>
+              <option value="Nestle">Nestle</option>
+              <option value="Kellogg">Kellogg</option>
+              <option value="Unilever">Unilever</option>
+              <option value="PepsiCo">PepsiCo</option>
+              <option value="CocaCola">Coca Cola</option>
+              <option value="KraftHeinz">Kraft Heinz</option>
             </select>
           </div>
 
@@ -133,7 +133,7 @@ const UpdateProduct = () => {
             />
           </div>
 
-          <div className="form-control">
+          <div className="form-control ">
             <label className="label">
               <span className="label-text text-white">Rating</span>
             </label>

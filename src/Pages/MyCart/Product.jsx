@@ -43,7 +43,7 @@ const Product = ({ product, products, setProducts }) => {
 
   return (
     <div>
-      <div className="card card-compact bg-[#150f2d] text-white shadow-xl">
+      <div className="card card-compact bg-[#150f2d] text-white rounded-md shadow-xl">
         <figure>
           <img src={productImageURL} alt={"Product Image"} />
         </figure>
@@ -68,13 +68,13 @@ const Product = ({ product, products, setProducts }) => {
           <div className=" flex justify-center items-center mt-4 space-x-3">
             <Link
               to={`/updateProduct/${_id}`}
-              className="btn w-1/2 btn-success"
+              className="btn w-1/2 border-none  text-white text-xs hover:bg-[#13341a] bg-[#1e4427]"
             >
               <FaEdit /> Update
             </Link>
             <button
               onClick={() => handleDelete(_id)}
-              className="btn w-1/2 btn-error"
+              className="btn w-1/2 border-none  text-white text-xs hover:bg-[#511b1b] bg-[#7d2530]"
             >
               <AiOutlineClose /> Delete
             </button>

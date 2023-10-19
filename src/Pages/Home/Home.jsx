@@ -4,6 +4,8 @@ import Slider from "../../components/Header/Slider/Slider";
 import OurStore from "../../components/OurStore/OurStore";
 
 const Home = () => {
+
+
     return (
       <div>
         <hr className="border-gray-700" />
