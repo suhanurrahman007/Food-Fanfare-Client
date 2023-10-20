@@ -1,7 +1,8 @@
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { FaRegClock } from "react-icons/fa";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import Experience from "../Experience/Experience";
+import Reservation from "../Reservation/Reservation";
 
 const BrandProductDetails = () => {
     const products = useLoaderData()
@@ -127,12 +128,22 @@ const BrandProductDetails = () => {
                     </a>
                   </div>
                 </div>
+
+                <div>
+                  <Link
+                    to={"/addProduct"}
+                    className="btn w-full bg-[#c5a35e] hover:bg-[#222335] font-normal text-white border-none rounded-none"
+                  >
+                    Add To Cart
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div>
-            <Experience></Experience>
+          <Experience></Experience>
+          <Reservation></Reservation>
         </div>
       </div>
     );
