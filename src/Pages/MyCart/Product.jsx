@@ -45,9 +45,9 @@ const Product = ({ product, products, setProducts }) => {
     <div>
       <div className="card card-compact bg-[#150f2d] text-white rounded-md shadow-xl">
         <figure>
-          <img src={productImageURL} alt={"Product Image"} />
+          <img className="w-full h-40" src={productImageURL} alt={"Product Image"} />
         </figure>
-        <div className="card-body">
+        <div className="card-body h-56">
           <h2 className="card-title">{name}</h2>
 
           <div className="flex">

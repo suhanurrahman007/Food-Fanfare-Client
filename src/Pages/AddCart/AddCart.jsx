@@ -92,8 +92,8 @@ const AddCart = () => {
               <option value="Kellogg">Kellogg</option>
               <option value="Unilever">Unilever</option>
               <option value="PepsiCo">PepsiCo</option>
-              <option value="CocaCola">Coca Cola</option>
-              <option value="KraftHeinz">Kraft Heinz</option>
+              <option value="CocaCola">CocaCola</option>
+              <option value="KraftHeinz">KraftHeinz</option>
             </select>
           </div>
 
@@ -170,7 +170,7 @@ const AddCart = () => {
             ></textarea>
           </div>
           <button type="submit" className="btn btn-primary">
-            Add Product
+            Add to Cart
           </button>
         </div>
       </form>

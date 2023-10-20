@@ -15,8 +15,8 @@ const Brand = () => {
     { name: "Kellogg", image: Kellogg },
     { name: "Unilever", image: Unilever },
     { name: "PepsiCo", image: PepsiCo },
-    { name: "Coca Cola", image: CocaCola },
-    { name: "Kraft Heinz", image: KraftHeinz },
+    { name: "CocaCola", image: CocaCola },
+    { name: "KraftHeinz", image: KraftHeinz },
   ];
 
   return (

@@ -74,25 +74,35 @@ const Login = () => {
           error.code === "auth/invalid-login-credentials" ||
           error.code === "auth/too-many-requests"
         ) {
-          setLoginError("Incorrect Email or Password.Please try Again.");
+          // setLoginError("Incorrect Email or Password.Please try Again.");
+           Swal.fire({
+             icon: "error",
+             title: "Opps...!",
+             text: "Incorrect Email or Password.Please try Again.",
+           });
           return;
         } else {
-          setLoginError("An error occurred during login. Please try again.");
+          Swal.fire({
+            icon: "error",
+            title: "Opps...!",
+            text: "An error occurred during login. Please try again.",
+          });
+          // setLoginError("An error occurred during login. Please try again.");
         }
       });
   };
 
   return (
-    <div className="flex justify-center mt-14">
-      <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-        <h2 className="text-3xl font-extrabold text-center text-orange-900 text-opacity-50">
+    <div className="flex justify-center py-14 bg-[#010313]">
+      <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-[#0e0d21] ">
+        <h2 className="text-3xl mt-4 font-extrabold text-center text-[#c29a4b] text-opacity-50">
           Sign In Please
         </h2>
 
-        <form onSubmit={handleLogin} className="card-body">
+        <form onSubmit={handleLogin} className="card-body ">
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Email</span>
+              <span className="label-text text-white">Email</span>
             </label>
             <input
               type="email"
@@ -104,7 +114,7 @@ const Login = () => {
           </div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Password</span>
+              <span className="label-text text-white">Password</span>
             </label>
             <input
               type={showPassword ? "text" : "password"}
@@ -155,7 +165,7 @@ const Login = () => {
                 className="mt-px cursor-pointer select-none font-light text-gray-700"
                 htmlFor="checkbox"
               >
-                {showPassword ? "Hide Password" : "Show Password"}
+                <span className="text-white">{showPassword ? "Hide Password" : "Show Password"}</span>
               </label>
             </div>
           </div>
@@ -183,12 +193,12 @@ const Login = () => {
             onClick={handleGithub}
           ></FaGithub>
         </div>
-        <p className="mb-7 flex justify-center font-sans text-sm font-light leading-normal text-inherit antialiased">
+        <p className="mb-7 flex justify-center text-white font-sans text-sm font-light leading-normal text-inherit antialiased">
           Do Not have an account?
           <Link
             to={"/registration"}
             href="#" //signup
-            className="ml-1 block font-sans text-sm font-bold leading-normal text-pink-500 antialiased"
+            className="ml-1 block font-sans text-sm font-bold leading-normal text-[#c5a35e] antialiased"
           >
             Sign Up
           </Link>

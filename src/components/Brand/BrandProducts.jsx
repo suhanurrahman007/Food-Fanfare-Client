@@ -4,19 +4,17 @@ import { FaBoxOpen, FaEdit } from "react-icons/fa";
 import { TbListDetails } from "react-icons/tb";
 import OurStore from "../OurStore/OurStore";
 
-
 const BrandProducts = () => {
   const { brandName } = useParams();
 
   const products = useLoaderData();
 
-
   console.log(products);
-    const brandProducts = products.filter(
-      (product) => product.brandName.toLowerCase() === brandName.toLowerCase()
-    );
+  const brandProducts = products.filter(
+    (product) => product.brandName.toLowerCase() === brandName.toLowerCase()
+  );
 
-    console.log(brandProducts);
+  console.log(brandProducts);
   return (
     <div>
       <AddSlider></AddSlider>
@@ -32,12 +30,16 @@ const BrandProducts = () => {
                 className="card card-compact bg-[#150f2d] text-white rounded-md shadow-xl"
               >
                 <figure>
-                  <img src={product.productImageURL} alt={"Product Image"} />
+                  <img src={product.productImageURL} className="w-full h-40" alt={"Product Image"} />
                 </figure>
-                <div className="card-body items-center text-center">
-                  <h2 className="card-title">{product.name}</h2>
-
-                  <div className="flex">
+                <div className="card-body h-56">
+                  <div className="grid grid-cols-2 gap-2">
+                    <h2 className="text-left">{product.name}</h2>
+                    <p className="text-right">{product.brandName}</p>
+                    <p className="text-left">{product.productType}</p>
+                    <p className="text-right">${product.price}</p>
+                  </div>
+                  <div className="flex justify-center">
                     {[...Array(5)].map((_, i) => (
                       <span
                         key={i}
@@ -51,8 +53,7 @@ const BrandProducts = () => {
                       </span>
                     ))}
                   </div>
-
-                  <p>{product.brandName}</p>
+                  <p className="text-center text-gray-400">{product.detailedDescription}</p>
 
                   <div className=" flex justify-center items-center mt-4 space-x-3">
                     <Link

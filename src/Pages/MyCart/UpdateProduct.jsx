@@ -12,7 +12,6 @@ const UpdateProduct = () => {
     price,
     rating,
     productImageURL,
-    detailedDescription,
   } = product;
 
   const [selectedRating, setSelectedRating] = useState(rating);
@@ -27,7 +26,6 @@ const UpdateProduct = () => {
     const price = form.price.value;
     const rating = form.rating.value;
     const productImageURL = form.productImageURL.value;
-    const detailedDescription = form.detailedDescription.value;
 
     const UpdateProduct = {
       name,
@@ -36,7 +34,6 @@ const UpdateProduct = () => {
       price,
       rating,
       productImageURL,
-      detailedDescription,
     };
 
     console.log(UpdateProduct);
@@ -181,20 +178,7 @@ const UpdateProduct = () => {
         </div>
 
         <div className="form-control mt-6 space-y-5">
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text text-white">
-                Detailed Description
-              </span>
-            </label>
-            <textarea
-              name="detailedDescription"
-              defaultValue={detailedDescription}
-              placeholder="Enter detailed description..."
-              className="textarea textarea-bordered"
-              required
-            ></textarea>
-          </div>
+          
           <button type="submit" className="btn btn-primary">
             Update Product
           </button>

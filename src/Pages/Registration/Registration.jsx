@@ -46,15 +46,15 @@ const Registration = () => {
       });
   };
   return (
-    <div className="flex justify-center mt-8">
-      <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-        <h2 className="text-3xl font-extrabold text-center text-orange-900 text-opacity-50">
+    <div className="flex justify-center py-8 bg-[#010313]">
+      <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-[#0e0d21]">
+        <h2 className="text-3xl mt-4 font-extrabold text-center text-[#c5a35e] text-opacity-50">
           Please Registration
         </h2>
         <form onSubmit={handleRegistration} className="card-body">
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Name</span>
+              <span className="label-text text-white">Name</span>
             </label>
             <input
               type="name"
@@ -66,7 +66,7 @@ const Registration = () => {
           </div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Email</span>
+              <span className="label-text text-white">Email</span>
             </label>
             <input
               type="email"
@@ -78,7 +78,7 @@ const Registration = () => {
           </div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Password</span>
+              <span className="label-text text-white">Password</span>
             </label>
             <input
               type={showPassword ? "text" : "password"}
@@ -121,7 +121,7 @@ const Registration = () => {
                 className="mt-px cursor-pointer select-none font-light text-gray-700"
                 htmlFor="checkbox"
               >
-                {showPassword ? "Hide Password" : "Show Password"}
+                <span className="text-white">{showPassword ? "Hide Password" : "Show Password"}</span>
               </label>
             </div>
           </div>
@@ -140,12 +140,12 @@ const Registration = () => {
             {RegistrationError}
           </p>
         )}
-        <p className="mb-7 flex justify-center  text-sm font-light leading-normal text-inherit antialiased">
+        <p className="mb-7 flex justify-center text-white  text-sm font-light leading-normal text-inherit antialiased">
           Already have an account?
           <Link
             to={"/login"}
             href="#signup"
-            className="ml-1 block  text-sm font-bold leading-normal text-pink-500 antialiased"
+            className="ml-1 block  text-sm font-bold leading-normal text-[#c5a35e] antialiased"
           >
             Login
           </Link>
