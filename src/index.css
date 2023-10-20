@@ -4,7 +4,25 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+/* body{
   font-family: 'Vidaloka',
   serif;
+} */
+
+/* Default to light theme */
+:root {
+  --primary-bg: white;
+  --primary-text: black;
+}
+
+[data-theme="dark"] {
+  --primary-bg: black;
+  --primary-text: white;
+}
+
+body {
+  font-family: 'Vidaloka',
+  serif;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
 }

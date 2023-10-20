@@ -113,7 +113,7 @@ const Navbar = () => {
             ) : (
               <Link
                 to={"/login"}
-                className="text-xs w-16 h-9 p-2 flex justify-center items-center bg-blue-900 text-white border-none rounded hover:bg-blue-950 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                className="text-xs w-24 h-9 p-2 flex justify-center items-center bg-blue-900 text-white border-none rounded hover:bg-blue-950 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
                 Log In
               </Link>

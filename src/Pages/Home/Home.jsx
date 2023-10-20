@@ -7,7 +7,7 @@ import Reservation from "../../components/Reservation/Reservation";
 const Home = () => {
   return (
     <div>
-      <hr className="border-gray-700" />
+      {/* <hr className="border-gray-700" /> */}
       <Slider></Slider>
       <Brand></Brand>
       <Reservation></Reservation>
