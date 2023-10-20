@@ -30,7 +30,7 @@ const AddCart = () => {
     console.log(addProduct);
 
 
-    fetch("http://localhost:5000/product", {
+    fetch("https://food-server-3xcp7p4qu-suhans-projects.vercel.app/product", {
         method: "POST",
         headers: {
             "content-type": "application/json"

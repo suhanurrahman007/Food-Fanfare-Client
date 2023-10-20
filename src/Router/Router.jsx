@@ -36,7 +36,7 @@ const router = createBrowserRouter([
             <MyCart></MyCart>
           </PrivetRouter>
         ),
-        loader: () => fetch("http://localhost:5000/product"),
+        loader: () => fetch("https://food-server-3xcp7p4qu-suhans-projects.vercel.app/product"),
       },
       {
         path: "/updateProduct/:id",
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
           </PrivetRouter>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product/${params.id}`),
+          fetch(`https://food-server-3xcp7p4qu-suhans-projects.vercel.app/product/${params.id}`),
       },
       {
         path: "/brand/:brandName",
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
             <BrandProducts></BrandProducts>
           </PrivetRouter>
         ),
-        loader: () => fetch("http://localhost:5000/product"),
+        loader: () => fetch("https://food-server-3xcp7p4qu-suhans-projects.vercel.app/product"),
       },
 
       {
@@ -65,7 +65,7 @@ const router = createBrowserRouter([
             <BrandProductDetails></BrandProductDetails>
           </PrivetRouter>
         ),
-        loader: () => fetch("http://localhost:5000/product"),
+        loader: () => fetch("https://food-server-3xcp7p4qu-suhans-projects.vercel.app/product"),
       },
 
       {

@@ -26,7 +26,7 @@ const Product = ({ product, products, setProducts }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/product/${id}`, {
+        fetch(`https://food-server-3xcp7p4qu-suhans-projects.vercel.app/product/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

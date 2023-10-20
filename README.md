@@ -2,11 +2,11 @@
 
 ## [ Private Repo Link](https://github.com/programming-hero-web-course-4/b8a10-brandshop-client-side-suhanurrahman007)
 
-Click here for the Social Event Live code link : ([https://github.com/programming-hero-web-course-4/b8a10-brandshop-client-side-suhanurrahman007](https://github.com/programming-hero-web-course-4/b8a10-brandshop-client-side-suhanurrahman007))
+Click here for the Food server site  Live code link : ([https://github.com/programming-hero-web-course-4/b8a10-brandshop-server-side-suhanurrahman007](https://github.com/programming-hero-web-course-4/b8a10-brandshop-server-side-suhanurrahman007))
 
 ## [ Live Link](Live Link)
 
-Click here for the private repo Live Link: ([Live Link](Live Link))
+Click here for the private repo Live Link: ([https://food-store-2a07d.web.app/](https://food-store-2a07d.web.app/))
 
 ### Add at least five bullet points mentioning different features and functionalities of my website.
 
