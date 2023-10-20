@@ -9,7 +9,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
-import auth from "../Firebase/Firebase";
+import auth from "../Firebase/Firebase.config";
 
 export const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();
