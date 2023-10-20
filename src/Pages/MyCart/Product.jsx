@@ -2,11 +2,18 @@ import { FaEdit } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import { useEffect } from "react";
 
 const Product = ({ product, products, setProducts }) => {
     // console.log(products, setProducts);
   const { _id, name, rating, productImageURL, detailedDescription } = product;
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
   const handleDelete = (id) => {
     console.log(id);
     Swal.fire({
@@ -43,9 +50,20 @@ const Product = ({ product, products, setProducts }) => {
 
   return (
     <div>
-      <div className="card card-compact bg-[#150f2d] text-white rounded-md shadow-xl">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="3000"
+        className="card card-compact bg-[#150f2d] text-white rounded-md shadow-xl"
+      >
         <figure>
-          <img className="w-full h-40" src={productImageURL} alt={"Product Image"} />
+          <img
+            data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000"
+            className="w-full h-40"
+            src={productImageURL}
+            alt={"Product Image"}
+          />
         </figure>
         <div className="card-body h-56">
           <h2 className="card-title">{name}</h2>

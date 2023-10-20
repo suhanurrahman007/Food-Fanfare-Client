@@ -3,11 +3,19 @@ import AddSlider from "../addSlider/addSlider";
 import { FaBoxOpen, FaEdit } from "react-icons/fa";
 import { TbListDetails } from "react-icons/tb";
 import OurStore from "../OurStore/OurStore";
+import AOS from "aos";
+import { useEffect } from "react";
 
 const BrandProducts = () => {
   const { brandName } = useParams();
 
   const products = useLoaderData();
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
 
   console.log(products);
   const brandProducts = products.filter(
@@ -27,10 +35,19 @@ const BrandProducts = () => {
             {brandProducts.map((product) => (
               <div
                 key={product._id}
+                data-aos="fade-up"
+                data-aos-duration="3000"
                 className="card card-compact bg-[#150f2d] text-white rounded-md shadow-xl"
               >
                 <figure>
-                  <img src={product.productImageURL} className="w-full h-40" alt={"Product Image"} />
+                  <img
+                    data-aos="flip-left"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="2000"
+                    src={product.productImageURL}
+                    className="w-full h-40"
+                    alt={"Product Image"}
+                  />
                 </figure>
                 <div className="card-body h-56">
                   <div className="grid grid-cols-2 gap-2">
@@ -53,7 +70,9 @@ const BrandProducts = () => {
                       </span>
                     ))}
                   </div>
-                  <p className="text-center text-gray-400">{product.detailedDescription}</p>
+                  <p className="text-center text-gray-400">
+                    {product.detailedDescription}
+                  </p>
 
                   <div className=" flex justify-center items-center mt-4 space-x-3">
                     <Link
@@ -74,7 +93,12 @@ const BrandProducts = () => {
             ))}
           </div>
         ) : (
-          <div className="flex flex-col items-center space-y-3">
+          <div
+            className="flex flex-col items-center space-y-3"
+            data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000"
+          >
             <FaBoxOpen className="text-gray-500 w-12 h-12" />{" "}
             <p>Oops! No products here.</p>
             <p>

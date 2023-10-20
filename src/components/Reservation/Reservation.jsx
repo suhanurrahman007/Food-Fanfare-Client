@@ -1,5 +1,13 @@
+import { useEffect } from "react";
 import reservation from "../../assets/make-a-reservation.jpg";
+import AOS from "aos";
+
 const Reservation = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
     return (
       <div>
         <div className="hero min-h-screen px-5 md:px-16 lg:px-20 py-14 bg-[#151620] text-white">
@@ -10,7 +18,7 @@ const Reservation = () => {
                 Opens 8:00 AM – 10:00 PM, every day of the week
               </p>
 
-              <img src={reservation} alt="" />
+              <img data-aos="zoom-in" src={reservation} alt="" />
               <p className="mt-7 text-sm text-gray-400 text-justify">
                 Users select a date and time, input their details, and get
                 instant confirmation. Admins can manage these bookings via a
@@ -18,9 +26,16 @@ const Reservation = () => {
                 reliability.
               </p>
             </div>
-            <div className="flex-shrink-0 w-full">
+            <div
+              className="flex-shrink-0 w-full"
+              
+            >
               <form className="card-body space-y-5">
-                <div className="form-control">
+                <div
+                  data-aos="fade-up"
+                  data-aos-anchor-placement="bottom-bottom"
+                  className="form-control"
+                >
                   <input
                     type="text"
                     placeholder="Name"
@@ -38,7 +53,11 @@ const Reservation = () => {
                   />
                 </div>
 
-                <div className="form-control">
+                <div
+                  data-aos="fade-up"
+                  data-aos-anchor-placement="bottom-bottom"
+                  className="form-control"
+                >
                   <select
                     className="input border-white rounded-none bg-[#151620]"
                     required
@@ -66,7 +85,11 @@ const Reservation = () => {
                   />
                 </div>
 
-                <div className="form-control">
+                <div
+                  data-aos="fade-up"
+                  data-aos-anchor-placement="bottom-bottom"
+                  className="form-control"
+                >
                   <input
                     type="time"
                     placeholder="Time"
@@ -75,7 +98,12 @@ const Reservation = () => {
                   />
                 </div>
 
-                <div className="form-control mt-6">
+                <div
+                  className="form-control mt-6"
+                  data-aos="flip-left"
+                  data-aos-easing="ease-out-cubic"
+                  data-aos-duration="2000"
+                >
                   <button className="btn bg-[#c5a35e] hover:bg-[#222335] font-normal text-white border-none rounded-none">
                     Make A Reservation
                   </button>

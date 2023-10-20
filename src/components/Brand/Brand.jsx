@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 // Importing brand images
 import nestle from "../../assets/NESTLE_BANNER_NEW_jMLY6My.png";
@@ -19,6 +22,13 @@ const Brand = () => {
     { name: "KraftHeinz", image: KraftHeinz },
   ];
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
+
+
   return (
     <div className="text-center px-5 md:px-16 space-y-14 lg:px-20 py-7 bg-[#e1d3b7] text-white">
       <div className="space-y-5">
@@ -34,10 +44,16 @@ const Brand = () => {
           <Link
             to={`/brand/${brand.name}`}
             key={brand.name}
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-center"
             className="card shadow-xl image-full hover:opacity-90 transition-opacity"
           >
             <figure>
-              <img src={brand.image} alt={brand.name} />
+              <img
+                
+                src={brand.image}
+                alt={brand.name}
+              />
             </figure>
             <div className="card-body flex justify-center items-center">
               <h2 className="card-title text-white">{brand.name}!</h2>

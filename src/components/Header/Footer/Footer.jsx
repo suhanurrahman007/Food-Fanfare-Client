@@ -1,6 +1,13 @@
 import { NavLink } from "react-router-dom";
+import AOS from "aos";
+import { useEffect } from "react";
 
 const Footer = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
     const links = (
       <>
         <li id="sidebar" className="mx-3 list-none">
@@ -37,13 +44,11 @@ const Footer = () => {
       </>
     );
     return (
-      <div>
+      <div data-aos="flip-down">
         <footer className="footer footer-center p-10 bg-[#262626] text-white rounded">
-          <nav className="grid grid-flow-col gap-4">
-            {links}
-          </nav>
+          <nav className="grid grid-flow-col gap-4">{links}</nav>
           <nav>
-            <div className="grid grid-flow-col gap-4">
+            <div className="grid grid-flow-col gap-4" data-aos="flip-down">
               <a>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

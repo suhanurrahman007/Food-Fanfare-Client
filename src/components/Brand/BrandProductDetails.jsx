@@ -3,6 +3,8 @@ import { FaRegClock } from "react-icons/fa";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import Experience from "../Experience/Experience";
 import Reservation from "../Reservation/Reservation";
+import AOS from "aos";
+import { useEffect } from "react";
 
 const BrandProductDetails = () => {
     const products = useLoaderData()
@@ -21,13 +23,24 @@ const BrandProductDetails = () => {
     } = filterProduct
 
     console.log(filterProduct);
+
+    useEffect(() => {
+      AOS.init({
+        duration: 1000,
+      });
+    }, []);
+
     return (
       <div>
         <div className="py-10 text-white bg-[#010313]">
           <div className="px-5 md:px-16 lg:px-24 grid lg:grid-cols-3 gap-4 lg:gap-20">
             <div className="col-span-2">
               <div className="card h-80  bg-base-100 shadow-xl image-full">
-                <figure>
+                <figure
+                  data-aos="flip-left"
+                  data-aos-easing="ease-out-cubic"
+                  data-aos-duration="2000"
+                >
                   <img className="w-full" src={productImageURL} alt="Shoes" />
                 </figure>
                 <div className="card-body flex justify-center items-center">
@@ -97,7 +110,12 @@ const BrandProductDetails = () => {
             <div className="col-span-1 space-y-5">
               <div className="space-y-14">
                 <div className="flex gap-5">
-                  <div className="text-6xl text-orange-900">
+                  <div
+                    data-aos="flip-left"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="2000"
+                    className="text-6xl text-orange-900"
+                  >
                     <FaRegClock></FaRegClock>
                   </div>
                   <div className="space-y-4">
@@ -110,7 +128,11 @@ const BrandProductDetails = () => {
                 </div>
                 <div className="flex gap-5">
                   <div className="text-6xl text-orange-900">
-                    <div>
+                    <div
+                      data-aos="flip-left"
+                      data-aos-easing="ease-out-cubic"
+                      data-aos-duration="2000"
+                    >
                       {" "}
                       <BiSolidPhoneCall></BiSolidPhoneCall>
                     </div>
@@ -129,7 +151,11 @@ const BrandProductDetails = () => {
                   </div>
                 </div>
 
-                <div>
+                <div
+                  data-aos="flip-left"
+                  data-aos-easing="ease-out-cubic"
+                  data-aos-duration="2000"
+                >
                   <Link
                     to={"/addProduct"}
                     className="btn w-full bg-[#c5a35e] hover:bg-[#222335] font-normal text-white border-none rounded-none"

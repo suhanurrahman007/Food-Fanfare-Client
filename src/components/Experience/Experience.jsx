@@ -1,13 +1,25 @@
 import { BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
 import sharp from "../../assets/sushi-chef.jpg"
 import "./Experience.css"
+import AOS from "aos";
+import { useEffect } from "react";
+
 const Experience = () => {
-   
+   useEffect(() => {
+     AOS.init({
+       duration: 1000,
+     });
+   }, []);
 
   return (
     <div className="md:flex space-y-4 px-5 md:px-16 lg:px-20 py-14">
       <div className="md:w-1/3 flex flex-col justify-center items-center space-y-5">
-        <img src={sharp} alt="Profile picture of Barry Allen" className="" />
+        <img
+          data-aos="zoom-in"
+          src={sharp}
+          alt="Profile picture of Barry Allen"
+          className=""
+        />
         <h1 className="text-2xl font-bold mb-2">BARRY ALLEN</h1>
         <p className="text-gray-600 mb-4">MASTER CHEF</p>
         <div className="flex justify-center space-x-4">
@@ -39,7 +51,11 @@ const Experience = () => {
         </p>
 
         <div className="space-y-5">
-          <div className="progress-container w-full">
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom"
+            className="progress-container w-full"
+          >
             <div
               className="progress-bar progress-warning"
               style={{ width: "85%" }}
@@ -57,12 +73,18 @@ const Experience = () => {
             </div>
           </div>
 
-          <div className="progress-container w-full">
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom"
+            className="progress-container w-full"
+          >
             <div
               className="progress-bar progress-warning"
               style={{ width: "70%" }}
             >
-              <span className="text-xs text-white">Knowledge of Nutrition: 70%</span>
+              <span className="text-xs text-white">
+                Knowledge of Nutrition: 70%
+              </span>
             </div>
           </div>
 
@@ -71,11 +93,17 @@ const Experience = () => {
               className="progress-bar progress-warning"
               style={{ width: "90%" }}
             >
-              <span className="text-xs text-white">Knowledge of Nutrition: 90%</span>
+              <span className="text-xs text-white">
+                Knowledge of Nutrition: 90%
+              </span>
             </div>
           </div>
 
-          <div className="progress-container w-full">
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom"
+            className="progress-container w-full"
+          >
             <div
               className="progress-bar progress-warning"
               style={{ width: "78%" }}
