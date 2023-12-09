@@ -10,6 +10,7 @@ import {
 } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
 import auth from "../Firebase/Firebase.config";
+// import axios from "axios";
 
 export const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();
@@ -48,6 +49,16 @@ const AuthProvider = ({ children }) => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
+      // if (currentUser) {
+      //   const userLogin = {email: currentUser.email}
+
+      //   axios
+      //     .post("https://food-server-3xcp7p4qu-suhans-projects.vercel.app/jwt", userLogin, {withCredentials: true})
+      //     .then((res) => {
+      //       console.log(res.data);
+      //     });
+      // }
+      
     });
     return () => {
       unSubscribe();
